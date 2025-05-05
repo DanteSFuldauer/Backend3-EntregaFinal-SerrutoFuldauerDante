@@ -1,0 +1,14 @@
+paths:
+  /api/users:
+    get:
+      summary: Obtener todos los usuarios
+      description: Get all users
+      tags:
+        - Users
+      responses:
+        200:
+          description: Retorno de usuarios OK
+          application/json:
+            schema:
+              type: array
+              

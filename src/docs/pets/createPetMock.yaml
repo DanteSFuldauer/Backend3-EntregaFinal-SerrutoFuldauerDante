@@ -1,0 +1,25 @@
+paths:
+  /api/pets/mocks/{amount}:
+    get:
+      summary: Crear mocks de mascotas
+      description: Get mocks by amount
+      tags:
+        - Pets
+      parameters:
+        - in: path
+          name: amount
+          required: true
+          schema:
+            type: string
+            format: number
+          description: Mock amount
+      responses:
+        201:
+          description: Creación de mocks de mascotas OK
+          content:
+            application/json:
+              schema:
+              $ref: "#/components/schemas/Pet"
+                # $ref: "#/components/schemas/adoption"
+        400:
+          description: Error al ingresar cantidad de mocks

@@ -1,0 +1,16 @@
+paths:
+  /api/adoptions:
+    delete:
+      summary: Eliminar todas las adopciones
+      description: Delete All Adoptions
+      tags:
+        - Adoptions
+      responses:
+        200:
+          description: Todas las adopciones eliminadas OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Adoption"
+        404:
+          description: No existen adopciones registradas

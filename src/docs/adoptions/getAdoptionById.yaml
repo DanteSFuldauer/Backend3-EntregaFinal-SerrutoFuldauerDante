@@ -1,0 +1,26 @@
+paths:
+  /api/adoptions/{id}:
+    get:
+      summary: Obtener un adoption por id
+      description: Get adoption by id
+      tags:
+        - Adoptions
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            format: ObjectId
+          description: ID de la adopción
+      responses:
+        200:
+          description: Retorno de adopción OK
+          content:
+            application/json:
+              schema:
+                # $ref: "#/components/schemas/adoption"
+        400:
+          description: Debe ingresar un object ID
+        404:
+          description: Adopción no encontrada

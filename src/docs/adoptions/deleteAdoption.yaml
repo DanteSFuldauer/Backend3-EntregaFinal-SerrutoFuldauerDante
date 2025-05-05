@@ -1,0 +1,49 @@
+paths:
+  /api/adoptions/{id}:
+    delete:
+      summary: Eliminar una adopción por su id
+      description: Delete Adoption by ID
+      tags:
+        - Adoptions
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+            format: ObjectId
+          description: ID de la adopción
+      responses:
+        200:
+          description: Adopción eliminada OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Adoption"
+        400:
+          description: Se debe ingresar un object ID
+        404:
+          description: Adopción no encontrada
+
+
+components:
+  schemas:
+    Adoption:
+      type: object
+      items:
+        properties:
+          _id:
+            type: ObjectId
+            description: Id pet
+          owner:
+            type: ObjectId
+            description: user
+          pet:
+            type: ObjectId
+            description: pet 
+          
+        example:
+          _id: 5f7e9f9b5f7e9f9a5f7e9f8c
+          owner: 68192160351fd7952cff5d6d
+          pet: 681921a8351fd7952cff5d78
+          

@@ -1,0 +1,35 @@
+import { userModel } from "./user.model.js";
+
+class UserDao {
+
+  /* async create(data) {
+    return await userModel.create(data);
+  } */
+
+  async getAll() {
+    return await userModel.find();
+  }
+
+  async getOne(query) {
+    
+    return await userModel.findOne(query);
+  }
+
+  async update(id, data) {
+    return await userModel.findByIdAndUpdate(id, data, { new: true });
+  }
+
+  async updateMany(filter, update) {
+    return await userModel.updateMany(filter, update);
+}
+
+  async remove(id) {
+    return await userModel.findByIdAndDelete(id);
+  }
+
+  async removeAll() {
+    return await userModel.deleteMany();
+  }
+}
+
+export const userDao = new UserDao();
