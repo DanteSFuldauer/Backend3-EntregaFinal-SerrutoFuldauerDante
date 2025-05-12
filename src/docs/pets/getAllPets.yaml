@@ -1,0 +1,14 @@
+paths:
+  /api/pets:
+    get:
+      summary: Obtener todas las mascotas
+      description: Get all pets
+      tags:
+        - Pets
+      responses:
+        200:
+          description: Retorno de mascotas OK
+          application/json:
+            schema:
+              type: array
+              

@@ -1,0 +1,16 @@
+paths:
+  /api/pets:
+    delete:
+      summary: Eliminar todas las mascotas
+      description: Delete All Pets
+      tags:
+        - Pets
+      responses:
+        200:
+          description: Todas las mascotas eliminadas OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pet"
+        404:
+          description: No existen mascotas registradas
